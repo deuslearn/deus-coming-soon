@@ -1,0 +1,23 @@
+{
+  "name": "deus_coming_soon",
+  "version": "1.0.0",
+  "description": "coming soon page for deus",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "coming_soon",
+    "deus",
+    "learning",
+    "study"
+  ],
+  "author": "Deus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4",
+    "pug": "^2.0.4"
+  }
+}
