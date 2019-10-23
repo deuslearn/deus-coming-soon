@@ -15,8 +15,19 @@ html
                     h1 COMING SOON
                     h2 The website is under construction
                     h2 Subscrbe to the newsletter to stay in the know
-                div
-                    canvas(id="glCanvas" width="640" height="880")
+                div(id="anime-top")
+                    div(id="anime")
+                        img(id="clock-rope-right" class="move" src='/public/rope.png' alt="rope")
+                        img(id="clock-rope-left" class="move" src='/public/rope.png' alt="rope")
+                        div(id="clock-body")
+                            img(id="clock-body-img" class="move" src='/public/clock.png' alt="clock")
+                            img(id="clock-bhand" class="move" src='/public/bi_hand.png' alt="big hand")
+                            img(id="clock-lhand" class="move" src='/public/li_hand.png' alt="little hand")
+                        img(id="cool-girl" class="move" src='/public/cool_girl.png' alt="cool girl")
+                        //- div(id="backlight" class="move")
+                    img(id="shadow" class="move" src='/public/shadow.png' alt="shadow")
+
+
         footer(class='footer')
             div(id="f-left")
                 p Home

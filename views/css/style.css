@@ -23,6 +23,8 @@ body{
 
 #main-body{
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main h1{
@@ -124,4 +126,68 @@ footer select{
 
 .sns{
     margin: 0 5px;
+}
+
+#anime-top{
+    /* background: lightseagreen; */
+    width: 652.61px;
+    height: 879.61px;
+    position: relative; 
+}
+
+#anime{
+    top: 60px;
+    z-index: 2;
+    position: relative; 
+    transform-origin: top;
+}
+
+.move{
+    position: absolute;
+}
+
+#clock-lhand, #clock-bhand{
+    z-index: 1;
+    transform-origin: bottom
+}
+
+#clock-lhand{
+    left: 256px;
+    top: 143px;
+}
+
+#clock-bhand{
+    left: 292px;
+    top: 72px;
+}
+
+
+#cool-girl{
+    right: 30px;
+    top: 327px;
+}
+
+#shadow{
+    bottom: 0px;
+}
+
+#clock-rope-right, #clock-rope-left{
+    top: -145px
+}
+
+#clock-rope-left{
+    left: 0px;
+}
+
+#clock-rope-right{
+    right: 0px
+}
+
+#backlight{
+    top: 350px;
+    right: 50px;
+    height: 100px;
+    width: 100px;
+    background: rgb(228, 131, 231);
+    opacity: .3;
 }
