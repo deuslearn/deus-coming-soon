@@ -11,11 +11,32 @@ html
         main(class='main')
             img(id="head-logo" src='/public/logo.png' alt="logo")
             div(id="main-body")
-                div
-                    h1 COMING SOON
-                    h2 The website is under construction
+                div(id="main-text")
+                    div(id="title")
+                        h1 COMING SOON
+                        h2 The website is under construction
+                    div(id="counters")
+                        div(class="digit" id="day")
+                            p 0
+                        div(class="digit" id="hrs")
+                            p 0
+                        div(class="digit" id="min")
+                            p 0
+                        div(class="digit" id="sec")
+                            p 0
                     h2 Subscrbe to the newsletter to stay in the know
+                    form
+                        input(type="email", name="email", placeholder="Email")
+                        input(type="submit" value=" ")
                 div(id="anime-top")
+                    div(class="circle" id="shape1")
+                    div(class="circle1" id="shape2")
+                    div(class="circle1" id="shape3")
+                    div(class="rect" id="shape4")
+                    div(class="rect2" id="shape8")
+                    div(class="rect1" id="shape5")
+                    div(class="bar" id="shape6")
+                    div(class="bar" id="shape7")
                     div(id="anime")
                         img(id="clock-rope-right" class="move" src='/public/rope.png' alt="rope")
                         img(id="clock-rope-left" class="move" src='/public/rope.png' alt="rope")

@@ -26,9 +26,9 @@ function main() {
   var anime = document.getElementById('anime');
   var shadow = document.getElementById('shadow');
   setInterval(()=>{
-    if(Math.floor(yRot)===2||Math.floor(yRot)===-2)
+    if(Math.round(yRot*10)/10===1.4||Math.round(yRot*10)/10===-1.4)
       yDir=!yDir
-    anime.style.transform = `rotate(${yDir?yRot+=.05:yRot-=.05}deg)`;
+    anime.style.transform = `rotate(${yDir?yRot+=.02:yRot-=.02}deg)`;
     shadow.style.left=`${-yRot}px`
   }, 50);
 
