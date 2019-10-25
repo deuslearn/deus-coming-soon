@@ -16,15 +16,23 @@ html
                         h1 COMING SOON
                         h2 The website is under construction
                     div(id="counters")
-                        div(class="digit" id="day")
-                            p 0
-                        div(class="digit" id="hrs")
-                            p 0
-                        div(class="digit" id="min")
-                            p 0
-                        div(class="digit" id="sec")
-                            p 0
-                    h2 Subscrbe to the newsletter to stay in the know
+                        div(class="di-block")
+                            div(class="digit" id="day")
+                                p(class="di") 0
+                            p(class="t-unit") Day
+                        div(class="di-block")
+                            div(class="digit" id="hrs")
+                                p(class="di") 0
+                            p(class="t-unit") Hour
+                        div(class="di-block")
+                            div(class="digit" id="min")
+                                p(class="di") 0
+                            p(class="t-unit") Minute
+                        div(class="di-block")
+                            div(class="digit" id="sec")
+                                p(class="di") 0
+                            p(class="t-unit") Second
+                    h2 Subscribe to the newsletter to stay in the latest news
                     form
                         input(type="email", name="email", placeholder="Email")
                         input(type="submit" value=" ")
@@ -47,7 +55,6 @@ html
                         img(id="cool-girl" class="move" src='/public/cool_girl.png' alt="cool girl")
                         //- div(id="backlight" class="move")
                     img(id="shadow" class="move" src='/public/shadow.png' alt="shadow")
-
 
         footer(class='footer')
             div(id="f-left")
