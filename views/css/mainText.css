@@ -1,0 +1,129 @@
+
+
+#title{
+    text-align: center;  
+    margin-bottom: 5.6%;
+}
+
+main h1{
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 8px;
+    /* identical to box height */
+    
+    text-align: center;
+    letter-spacing: 7.85px;
+    text-transform: uppercase;
+}
+
+main h2{
+    font-weight: 500;
+    font-size: 17px;
+    margin-top: 0px;
+    /* line-height: 21px; */
+    /* identical to box height */
+
+    letter-spacing: 0.1105px;
+}
+
+#main-text{
+    /* background: lightsalmon; */
+    width: 51%;
+    min-width: 400px;
+    grid-area: text;
+    z-index: 3;
+    justify-self: left;
+    margin-left: 22%;
+}
+
+#counters{
+    display: grid;
+    grid-template-columns: 18.5% 18.5% 18.5% 18.5%;
+    column-gap: 7%;
+    margin-bottom: 12%;
+    margin-top: 7%;
+    margin-left: -5%;
+}
+
+.digit{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #10AFD0;
+    border-radius: 50%;
+}
+
+.t-unit{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 1.76px;
+    text-transform: uppercase;
+}
+
+.di{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 4.224px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-left: 5px;
+    text-align: center;
+}
+
+input[type=email]{
+    height: 40px;
+    width: 72%;
+    background: transparent;
+    border: 1px solid #035F75;
+    border-right-color: #10AFD0;
+    box-sizing: border-box;
+    padding-left: 16px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+input[type=submit]{
+    height: 40px;
+    width: 40px;
+    background: #10AFD0;
+    background-image: url('/public/email_b.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    border: 0px;
+    border-radius: 0px 5px 5px 0px;
+
+    cursor: pointer;
+}
+
+
+@media(max-width: 600px){
+
+    #cpy-rite{
+        font-size: 1.5vw;
+    }
+
+    #foot-logo, #f-left{
+        visibility: hidden;
+        height: 0;
+    }
+
+    #main-text{
+        /* background: lightseagreen; */
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        min-width: 300px;
+        margin-left: unset;
+        text-align: center;
+    }
+
+    #counters{
+        margin-left: unset;
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+}
