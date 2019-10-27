@@ -1,0 +1,156 @@
+main{
+    /* background: lightseagreen; */
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#main-top, #main-two, #main-three{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#main-top{
+    display: grid;
+    grid-template-columns: 54% 44%;
+    grid-template-areas: "lapt exp";
+    align-content: center;
+}
+#mouse{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+}
+
+#fig-img{
+    position: absolute;
+    z-index: -1;
+    height: 98%;
+    left: 8%;
+}
+
+#laptop{
+    /* background: lightsalmon; */
+    grid-area: lapt;
+    justify-self: right;
+}
+
+#exp{
+    /* background: lightseagreen; */
+    display: grid;
+    align-content: center;
+    justify-self: center;
+    grid-area: exp;
+}
+
+#main-two, #main-three{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-content: center;
+}
+
+#main-two p, #main-three p{
+    font-size: 12px;
+}
+
+#main-three p{
+    text-align: right;
+}
+
+#main-three h1{
+    text-align: center;
+}
+
+#main-two h2{
+    font-size: 17px;
+    line-height: 0px;
+}
+
+#m2-left{
+    justify-self: center;
+    width: 60%;
+}
+
+.plat-list-pnt{
+    display: flex;
+    align-items: center;
+}
+
+.bullet{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #65B34B;
+    margin-right: 20px;
+}
+
+#m3-left{
+    justify-self: center;
+}
+
+#m3-right{
+    /* background: lightseagreen; */
+    position: relative;
+    display: grid;
+    row-gap: 0;
+    align-content: center;
+    justify-self: center;
+    width: 57%;
+}
+
+#m3-right h1{
+    text-align: right;
+}
+
+.back-img{
+    position: absolute;
+}
+
+#note{
+    top: 30%;
+    left: 0;
+    opacity: 0.3;
+}
+
+#note1{
+    top: 23%;
+    right: 0;
+    opacity: 0.3;
+}
+
+#note2{
+    bottom: 15%;
+    left: 46%;
+    opacity: 0.1;
+}
+
+#hero{
+    top: 23%;
+    left: 46%;
+    opacity: 0.3;
+}
+
+#hero1{
+    bottom: 20%;
+    left: 25%;
+    opacity: 0.3;
+}
+
+#quest{
+    top: 18%;
+    left: 20%;
+    opacity: 0.1;
+}
+
+#quest1{
+    top: 18%;
+    right: 20%;
+    opacity: 0.3;
+}
+
+#quest2{
+    bottom: 20%;
+    right: 20%;
+    opacity: 0.3;
+}
