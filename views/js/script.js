@@ -5,8 +5,8 @@ function main() {
   var bhand = document.getElementById('clock-bhand');
 
   let time = new Date()
-  let mins = ((time.getMinutes()+time.getSeconds()/100)*6)%360 
-  let hours = (((time.getHours()%12)*30)+(mins/100))%360
+  let mins = ((time.getMinutes()+time.getSeconds()/60)*6)%360 
+  let hours = (((time.getHours()%12)*30)+(mins/60))%360
   
   lhand.style.transform = `rotate(${mins}deg)`;
   bhand.style.transform = `rotate(${hours}deg)`;
@@ -15,8 +15,8 @@ function main() {
 
   setInterval(()=>{ 
     time = new Date()
-    mins = ((time.getMinutes()+time.getSeconds()/100)*6)%360
-    hours= (((time.getHours()%12)*30)+(mins/100))%360
+    mins = ((time.getMinutes()+time.getSeconds()/60)*6)%360
+    hours= (((time.getHours()%12)*30)+(mins/60))%360
     
     lhand.style.transform = `rotate(${mins}deg)`;
     bhand.style.transform = `rotate(${hours}deg)`;

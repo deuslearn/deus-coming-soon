@@ -1,12 +1,10 @@
 #anime-top{
     /* background: lightsalmon; */
-    height: 100%;
-    width: 66.8%;
-    min-width: 350px;
+    height:90%;
+    width: 50%;
     grid-area: animation;
     position: relative;
     /* margin-right: 30%; */
-    justify-self: center;
     /* right: 50px; */
     
 }
@@ -154,7 +152,7 @@
 }
 
 #shadow{
-    bottom: 1%;
+    bottom: 0%;
     height: 9.02%;
     width: 100%;
 }
@@ -172,20 +170,24 @@
 #clock-rope-right{
     right: 0px
 }
-@media(max-width: 600px){
+@media(max-width: 1000px){
     #anime-top{
         /* background: lightgoldenrodyellow; */
         position: relative;
         display: inline-block;
         height: 85.8%;
-        width: 66.8%;
+        width: 80%;
         margin-left: unset;
         grid-area: animation;
         position: relative;
     }
 
+    #anime{
+        /* min-width: 350px; */
+    }
+
     #shadow{
-        bottom: 0;
+        bottom: -2.5%;
         height: 9.02%;
         width: 100%;
     }

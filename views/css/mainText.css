@@ -5,7 +5,7 @@
     margin-bottom: 5.6%;
 }
 
-main h1{
+h1{
     font-weight: bold;
     font-size: 30px;
     line-height: 37px;
@@ -17,7 +17,7 @@ main h1{
     text-transform: uppercase;
 }
 
-main h2{
+h2{
     font-weight: 500;
     font-size: 17px;
     margin-top: 0px;
@@ -28,22 +28,21 @@ main h2{
 }
 
 #main-text{
-    /* background: lightsalmon; */
-    width: 51%;
-    min-width: 400px;
+    width: 470px;
+    /* min-width: 400px; */
+    /* height: 200px; */
     grid-area: text;
     z-index: 3;
-    justify-self: left;
-    margin-left: 22%;
+    /* justify-self: left; */
+    /* margin-left: 22%; */
 }
 
 #counters{
     display: grid;
     grid-template-columns: 18.5% 18.5% 18.5% 18.5%;
     column-gap: 7%;
-    margin-bottom: 12%;
+    margin-bottom: 6%;
     margin-top: 7%;
-    margin-left: -5%;
 }
 
 .digit{
@@ -92,15 +91,15 @@ input[type=submit]{
     background: #10AFD0;
     background-image: url('/public/email_b.png');
     background-repeat: no-repeat;
-    background-position: center; 
-    border: 0px;
+    background-position: center;
+    border: none;
     border-radius: 0px 5px 5px 0px;
 
     cursor: pointer;
 }
 
 
-@media(max-width: 600px){
+@media(max-width: 1000px){
 
     #cpy-rite{
         font-size: 1.5vw;
@@ -113,12 +112,17 @@ input[type=submit]{
 
     #main-text{
         /* background: lightseagreen; */
-        position: relative;
+        /* position: relative;
         display: inline-block;
         width: 100%;
         min-width: 300px;
-        margin-left: unset;
-        text-align: center;
+        margin-left: unset;*/
+        text-align: center; 
+    }
+
+    #title{
+        visibility: hidden;
+        height: 0;
     }
 
     #counters{
