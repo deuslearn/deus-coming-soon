@@ -1,0 +1,36 @@
+#about{
+    width: 60%;
+    min-width: 470px;
+    /* min-width: 400px; */
+    /* height: 200px; */
+    grid-area: text;
+    z-index: 3;
+    /* justify-self: left; */
+    /* margin-left: 22%; */
+}
+
+.about-p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 4.224px;
+    text-transform: unset;
+    text-align: unset;
+    text-align: center;
+}
+
+
+@media(max-width: 1000px){
+    #about{
+        width: 90%;
+        min-width: unset;
+    }
+
+    #about h1{
+        visibility: hidden;
+        font-size: 0;
+        margin: 0;
+        height: 0
+    }
+}

@@ -16,13 +16,14 @@ html
                 div(class="nb-divider")
                 p About platform
                 div(class="nb-divider")
-                p About company
+                p About <span>
+                    img(id="dues" src='/public/deus.png' alt="deus")
+                    </span>
 
-            img(id="foot-logo" src='/public/logo.png', alt="logo")
+            img(id="head-logo" src='/public/logo.png', alt="logo")
             div(id="nb-right")
-                form
-                    input(type="text" id="search-button", style=`background-image:url(${'/public/homepage/search.png'})`)
-                div(class="nb-divider")
+                input(type="text", autocomplete="off", id="search-button", style=`background-image:url(${'/public/homepage/search.png'})`)
+                div(class="nb-divider" id="divider3")
                 div(id="sn")
                     img(class="nav-icon" src='/public/homepage/sign_out.png', alt="logo")
                     p Sign in
@@ -76,14 +77,18 @@ html
                     img(class="back-img" id="quest1" src="/public/homepage/questions.png" )
                     img(class="back-img" id="quest2" src="/public/homepage/questions.png" )
             footer
-                div(id="f-left")
-                    p Home
-                    div(class="f-divider")
-                    p About platform
-                    div(class="f-divider")
-                    p About company
 
                 img(id="foot-logo", src='/public/logo.png', alt="logo")
+                div(id="f-left")
+                    p About
+                    div(class="f-divider")
+                    p Feedback
+                    div(class="f-divider")
+                    p Help
+                    div(class="f-divider")
+                    p Terms
+                    div(class="f-divider")
+                    p Privacy
 
                 div(id="f-right")
                     p(id="cpy-rite") Copyright ©  2018-2019 Deus Company S.L. All rights reserved.

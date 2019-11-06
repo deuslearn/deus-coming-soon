@@ -10,7 +10,7 @@ footer {
     align-self: end;
 }
 
-footer p{
+footer p, footer a{
     font-weight: 500;
     font-size: .6vw;
     line-height: 15px;
@@ -74,6 +74,10 @@ footer select{
     align-items: center;
 }
 
+#f-left a{
+    text-decoration: none;
+}
+
 .sns{
     margin: 0 5px;
     cursor: pointer;
@@ -85,9 +89,11 @@ footer select{
         font-size: 1.5vw;
     }
 
-    #foot-logo, #f-left{
-        visibility: hidden;
-        height: 0;
+    #f-left a{
+        font-size: 2vw;
+    }
+    #f-left{
+        margin-top: 10px;
     }
 
     footer {
@@ -95,7 +101,8 @@ footer select{
         align-items: center;
         height: auto;
         width: 100%;
-        background: #002533;bottom: 0;
+        background: #002533;
+        bottom: 0;
     }
 
     footer p{

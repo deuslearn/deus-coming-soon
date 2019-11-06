@@ -5,15 +5,17 @@ html
             include /css/style.css
             include /css/animation.css
             include /css/footer.css
-            include /css/mainText.css
+            include /css/contact.css
         script
             include /js/script.js
-        title Coming Soon
+        title Contact Us
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(href="/public/icon.png", rel="icon")
         link(href="https://fonts.googleapis.com/css?family=Montserrat&display=swap", rel="stylesheet")
     body
-        img(id="head-logo" src='/public/logo.png' alt="logo")
+        a(id="head-logo" href=`${'/'}`) 
+            img( src='/public/logo.png' alt="logo")
+        
         div(id="right-wrap")
             div(id="anime-top")
                 div(class="circle" id="shape1")
@@ -35,35 +37,35 @@ html
                     //- div(id="backlight" class="move")
                 img(id="shadow" class="move" src='/public/shadow.png' alt="shadow")
             div(id="title0")
-                h1 COMING SOON
+                h1 Contact Us
         div(id="left-wrap")
-            div(id="main-text")
-                div(id="title")
-                    h1 COMING SOON
-                    h2 The website is under construction
-                div(id="counters")
-                    div(class="di-block")
-                        div(class="digit" id="day")
-                            p(class="di") 0
-                        p(class="t-unit") Day
-                    div(class="di-block")
-                        div(class="digit" id="hrs")
-                            p(class="di") 0
-                        p(class="t-unit") Hour
-                    div(class="di-block")
-                        div(class="digit" id="min")
-                            p(class="di") 0
-                        p(class="t-unit") Minute
-                    div(class="di-block")
-                        div(class="digit" id="sec")
-                            p(class="di") 0
-                        p(class="t-unit") Second
-                h2 Subscribe to get updates on current progress <span>
-                    img(id="dues" src='/public/deus.png' alt="deus")
-                    </span> and to be alerted when the count down begins.
+            div(id="contact-form")
+                h1 Contact Us
                 form
-                    input(type="email", name="email", placeholder="Email")
-                    input(type="submit" value=" ")
+                    select(name="reason")
+                        option(value="") Please select a topic
+                        option(value="story") I want to submit a story
+                        option(value="legal") I have a legal complaint
+                        option(value="art") Submit artwork
+                        option(value="job") Give me a job
+                        option(value="other") Other
+                    div(class="field")
+                        label(for="fullname") Your name <span>Required</span>
+                        input(name="fullname", type="text", required)
+                    div(class="field")
+                        label(for="email") Your email address <span>Required</span>
+                        input(name="email", type="email", required)
+                    div(class="field")
+                        label(for="subject") Subject
+                        input(name="subject", type="text")
+                    div(class="field")
+                        label(for="subject") Message <span>Required</span>
+                        textarea(name="Message", required)
+                    div(class="field")
+                        label(for="subject") Upload a file
+                        input(type="file", id="avatar", name="avatar", accept="")
+                    input(type="submit", value="Send Message")
+        
         footer
             div(id="f-left")
                 a(href=`${'/about'}`) About Us

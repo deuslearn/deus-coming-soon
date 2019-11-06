@@ -5,28 +5,6 @@
     margin-bottom: 5.6%;
 }
 
-h1{
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 37px;
-    margin-bottom: 8px;
-    /* identical to box height */
-    
-    text-align: center;
-    letter-spacing: 7.85px;
-    text-transform: uppercase;
-}
-
-h2{
-    font-weight: 500;
-    font-size: 17px;
-    margin-top: 0px;
-    /* line-height: 21px; */
-    /* identical to box height */
-
-    letter-spacing: 0.1105px;
-}
-
 #main-text{
     width: 470px;
     /* min-width: 400px; */
@@ -74,7 +52,17 @@ h2{
     text-align: center;
 }
 
-input[type=email]{
+.about-p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 29px;
+    letter-spacing: 4.224px;
+    text-transform: unset;
+    text-align: unset;
+}
+
+#main-text input[type=email]{
     height: 40px;
     width: 72%;
     background: transparent;
@@ -85,7 +73,7 @@ input[type=email]{
     border-radius: 5px 0px 0px 5px;
 }
 
-input[type=submit]{
+#main-text input[type=submit]{
     height: 40px;
     width: 40px;
     background: #10AFD0;
@@ -101,15 +89,6 @@ input[type=submit]{
 
 @media(max-width: 1000px){
 
-    #cpy-rite{
-        font-size: 1.5vw;
-    }
-
-    #foot-logo, #f-left{
-        visibility: hidden;
-        height: 0;
-    }
-
     #main-text{
         /* background: lightseagreen; */
         /* position: relative;
@@ -122,7 +101,9 @@ input[type=submit]{
 
     #title{
         visibility: hidden;
-        height: 0;
+        font-size: 0;
+        margin: 0;
+        height: 0
     }
 
     #counters{

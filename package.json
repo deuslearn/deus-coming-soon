@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon -e js,pug index.js "
+    "dev": "nodemon -e js index.js "
   },
   "keywords": [
     "coming_soon",

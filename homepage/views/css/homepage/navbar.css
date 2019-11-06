@@ -1,51 +1,49 @@
-
-footer {
+#navbar {
     position: relative;
-    flex-shrink: 0;
+    float: left;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
+    top: 0px;
     width: 100%;
     height: 60px;
-    bottom: 0;
     background: #002533;
+    align-self: end;
+    z-index: 3;
 }
 
-footer p{
+#navbar p{
     font-weight: 500;
     font-size: .6vw;
     line-height: 15px;
     
     letter-spacing: 0.38px;
-    text-transform: uppercase;
 
     color: #9CB1BA;
 
     margin: 0 25px;
 }
 
-.f-divider{
+.nb-divider{
     mix-blend-mode: normal;
     opacity: 0.2;
     border: 1px solid #687A81;
     height: 22px;
 }
 
-#foot-logo{
+#head-logo{
+    position: absolute;
+    left: 50%;
     flex-basis: 1;
     height: 100%;
 }
 
-#cpy-rite{
-    font-weight: 500;
-    font-size: .6vw;
-    line-height: 13px;
-    text-align: right;
-    letter-spacing: 0.418px;
-    color: #687A81;
+#divider3{
+    margin: 0 20px;
 }
 
-footer select{
+#navbar select{
     height: 35px;
     width: 110px;
 
@@ -70,16 +68,70 @@ footer select{
     padding-left: 10px;
 }
 
-#f-right, #f-left{
+#nb-right, #nb-left{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    text-transform: uppercase;
+    /* background: lightyellow; */
+}
+
+#nb-right{
+    justify-content: flex-end;
+    /* margin-right: 20px; */
+}
+
+#sn{
+    cursor: pointer;
     display: flex;
     align-items: center;
 }
 
-.sns{
-    margin: 0 5px;
-    cursor: pointer;
-    pointer-events: fill;
+.nb-icon{
+    align-self: center;
+    padding: 10px 0px
 }
+
+.nb-icon img{
+    cursor: pointer;
+}
+
+/* #navbar form{
+    display: flex;
+} */
+
+#search-button {
+cursor: pointer;
+  background-color: transparent;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+
+  background-position: 96% 1px; 
+  
+  border: 3px solid transparent;
+  /* border-color: transparent; */
+  border-radius: 20px;
+
+  height: 32px;
+  width: 5px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+
+  padding-left: 20px;
+  padding-right: 40px;
+  /* identical to box height */
+  
+  letter-spacing: -0.0184615px;
+  
+  color: #9CB1BA;
+}
+
+#search-button:focus {
+    cursor: text;
+    width: 180px;
+    outline: none;
+}
+
 
 @media(max-width: 1000px){
     #cpy-rite{
@@ -91,7 +143,7 @@ footer select{
         height: 0;
     }
 
-    footer {
+    #navbar {
         display: grid;
         align-items: center;
         height: auto;
@@ -99,10 +151,10 @@ footer select{
         background: #002533;bottom: 0;
     }
 
-    footer p{
+    #navbar p{
         font-size: 9px;
     } 
-    footer select{
+    #navbar select{
         font-size: 7px;
         margin: 10px 25px;
     }   

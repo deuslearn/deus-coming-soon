@@ -1,35 +1,32 @@
-#navbar {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+footer {
+    position: relative;
     flex-shrink: 0;
-    top: 0px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 60px;
+    /* height: 160px; */
+    padding: 10px 0;
+    bottom: 0;
     background: #002533;
-    align-self: end;
-    z-index: 3;
+    gap: 10px 0;
 }
 
-#navbar p{
+footer p{
     font-weight: 500;
     font-size: .6vw;
     line-height: 15px;
     
     letter-spacing: 0.38px;
+    text-transform: uppercase;
 
     color: #9CB1BA;
 
     margin: 0 25px;
 }
 
-#nb-left p{
-    text-transform: uppercase;
-
-}
-
-.nb-divider{
+.f-divider{
     mix-blend-mode: normal;
     opacity: 0.2;
     border: 1px solid #687A81;
@@ -37,8 +34,9 @@
 }
 
 #foot-logo{
-    flex-basis: 1;
-    height: 100%;
+    /* flex-basis: 1; */
+    justify-self: center;
+    height: 60px;
 }
 
 #cpy-rite{
@@ -50,7 +48,7 @@
     color: #687A81;
 }
 
-#navbar select{
+footer select{
     height: 35px;
     width: 110px;
 
@@ -75,65 +73,17 @@
     padding-left: 10px;
 }
 
-#nb-right, #nb-left{
-    display: flex;
-    height: 100%;
-    align-items: center;
-    /* background: lightyellow; */
-}
-
-#nb-left{
-    justify-content: flex-end;
-    margin-right: 20px;
-}
-
-#sn{
+#f-right, #f-left{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.nb-icon{
-    align-self: center;
-    padding: 10px 0px
-}
-
-.nb-icon img{
+.sns{
+    margin: 0 5px;
     cursor: pointer;
+    pointer-events: fill;
 }
-
-#navbar form{
-    display: flex;
-}
-
-#search-button {
-  background-color: transparent;
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-
-  background-position: 96% 1px; 
-  
-  border: 3px solid transparent;
-  /* border-color: transparent; */
-  border-radius: 20px;
-
-  height: 32px;
-  width: 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-
-  padding-left: 20px;
-  padding-right: 40px;
-  /* identical to box height */
-  
-  letter-spacing: -0.0184615px;
-  
-  color: #9CB1BA;
-}
-
-#search-button:focus {
-    width: 180px;
-}
-
 
 @media(max-width: 1000px){
     #cpy-rite{
@@ -145,18 +95,19 @@
         height: 0;
     }
 
-    #navbar {
+    footer {
         display: grid;
         align-items: center;
-        height: auto;
+        height: 60px;
+        padding: unset;
         width: 100%;
         background: #002533;bottom: 0;
     }
 
-    #navbar p{
+    footer p{
         font-size: 9px;
     } 
-    #navbar select{
+    footer select{
         font-size: 7px;
         margin: 10px 25px;
     }   
