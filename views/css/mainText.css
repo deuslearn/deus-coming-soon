@@ -52,16 +52,6 @@
     text-align: center;
 }
 
-.about-p{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 29px;
-    letter-spacing: 4.224px;
-    text-transform: unset;
-    text-align: unset;
-}
-
 #main-text input[type=email]{
     height: 40px;
     width: 72%;

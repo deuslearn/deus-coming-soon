@@ -1,7 +1,7 @@
 #anime-top{
     /* background: lightsalmon; */
     height:90%;
-    width: 50%;
+    width: 60%;
     grid-area: animation;
     position: relative;
     /* margin-right: 30%; */
@@ -118,8 +118,13 @@
 }
 
 #clock-body-img{
+    background-image: url('/public/clock.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     height: 100%;
     width: 100%;
+    border-radius: 50%;
     top: 0px;
     right: 0px;
 }

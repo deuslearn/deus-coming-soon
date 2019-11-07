@@ -3,7 +3,7 @@
     min-width: 40%;
 }
 
-input, label {
+#contact-form input, #contact-form label {
     display:block;
 }
 
