@@ -48,7 +48,7 @@ module.exports = class CloudHandler{
     }
 
     uploadDocument(req, res, next){
-        if (!req.file) {
+        if (!req.body.files) {
             return next();
         }
         

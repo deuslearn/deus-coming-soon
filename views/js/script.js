@@ -28,7 +28,7 @@ if(document.getElementById('contactForm'))
       return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
     }
   });
-  
+
   function processForm(e) {
     console.log(dropzone.files)
     console.log("I won't do it")
@@ -91,6 +91,6 @@ window.onload = () => {
 };
 
 window.onbeforeunload = () => {
-  let message = "You have attempted to leave this page. If you have made any changes to the fields without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
-  return message;
+  // let message = "You have attempted to leave this page. If you have made any changes to the fields without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
+  // return message;
 };

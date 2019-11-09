@@ -33,7 +33,7 @@ app.get('/contact', (req, res) => {
     res.render(PAGE, {page:"contact"});
 });
 
-app.post('/contact', (req, res) => {
+app.post('/contact' , async (req, res) => {
     if(req.body.files){
         req.body.files = req.body.files.split(",")
     }
@@ -43,7 +43,7 @@ app.post('/contact', (req, res) => {
     switch(req.body.topic){
         case "other":
         case "legal":
-            // resp = service.relayToDeusInfo(req.body)
+            resp = await service.relayToDeusInfo(req.body)
             break;
         case "art":
         case "job":
@@ -51,9 +51,8 @@ app.post('/contact', (req, res) => {
         default:
             break
     }
-    console.log("dafdsa")
     if(resp)
-        res.render(PAGE, {page: "message_received"});
+        res.render(PAGE, {page: "submit_error"});
     else
         res.render(PAGE, {page: "message_received"})
 });
