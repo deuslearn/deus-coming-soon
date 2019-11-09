@@ -2,3 +2,5 @@ node_modules
 package-lock.json
 Deus_Platform*
 noreply_creds.json
+tmp/
+.bk_*

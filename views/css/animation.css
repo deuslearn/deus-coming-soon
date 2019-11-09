@@ -117,14 +117,15 @@
     top: 90px;
 }
 
-#clock-body-img{
-    background-image: url('/public/clock.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+#clock-body{
     height: 100%;
     width: 100%;
-    border-radius: 50%;
+}
+
+#clock-body-img{
+    height: 100%;
+    width: 100%;
+    /* border-radius: 50%; */
     top: 0px;
     right: 0px;
 }

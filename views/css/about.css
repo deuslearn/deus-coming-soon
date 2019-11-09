@@ -1,6 +1,7 @@
 #about{
     width: 60%;
     min-width: 470px;
+    align-self: center;
     /* min-width: 400px; */
     /* height: 200px; */
     grid-area: text;

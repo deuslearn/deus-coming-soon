@@ -1,14 +1,16 @@
 const path = require('path')
 const express = require('express')
-const app = express()
 const bodyParser = require('body-parser')
+
+const CloudHandler = require('./src/utils/uploadFiles')
 const MessageService = require('./src/MessageService')
 
 const PORT = process.env.PORT || 8084;
+const PAGE = "index"
 
-const PAGE = process.env.PAGE || "index"
-
-let service = new MessageService()
+const service = new MessageService()
+const handler = new CloudHandler
+const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -32,11 +34,16 @@ app.get('/contact', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
+    if(req.body.files){
+        req.body.files = req.body.files.split(",")
+    }
+    console.log(req.body)
+
     let resp = null
     switch(req.body.topic){
         case "other":
         case "legal":
-            resp = service.relayToDeusInfo(req.body)
+            // resp = service.relayToDeusInfo(req.body)
             break;
         case "art":
         case "job":
@@ -44,10 +51,24 @@ app.post('/contact', (req, res) => {
         default:
             break
     }
+    console.log("dafdsa")
     if(resp)
         res.render(PAGE, {page: "message_received"});
     else
         res.render(PAGE, {page: "message_received"})
 });
 
+app.post('/upload_document', handler.uploadFile.single('file'), (req, res) => {
+    console.log("Upload Complete")
+    res.send(true)
+})
+
+app.post('upload_images', handler.uploadFile.single('images'), (req, res) => {
+    
+})
+
+app.delete('/file/:fileName', (req, res) => {
+    handler.deleteFile(req.params.fileName)
+    res.send(true)
+})
 app.listen(PORT)

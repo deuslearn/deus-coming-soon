@@ -1,6 +1,11 @@
 #contact-form{
+    margin-top: 10%;
     width: 40%;
     min-width: 40%;
+}
+
+#contact-form h1{
+    margin-bottom: 25px;
 }
 
 #contact-form input, #contact-form label {
@@ -11,7 +16,11 @@
     margin: 10px 0 5px 0;
 }
 
-#contact-form input[type=email], #contact-form input[type=text], #contact-form select, #contact-form textarea{
+#contact-form input[type=email], 
+#contact-form input[type=text], 
+#contact-form select, 
+#contact-form textarea, 
+#contact-form #uploadForm{
     height: 40px;
     background: transparent;
     border: 1px solid #035F75;
@@ -19,6 +28,12 @@
     padding-left: 16px;
     border-radius: 5px;
     width: 100%;
+}
+
+#contact-form #uploadForm{
+    height: unset;
+    border: 3px dashed #035F75;
+    color: black
 }
 
 #contact-form textarea{
@@ -60,6 +75,7 @@
 @media(max-width:1000px){
     #contact-form{
         width: 70%;
+        align-self: center;
         max-width: 400px;
     }
 

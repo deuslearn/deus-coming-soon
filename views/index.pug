@@ -8,9 +8,22 @@ html
             include /css/mainText.css
             include /css/about.css
             include /css/contact.css
-        script
+            include /css/dropzone.css
+            include /css/basic.css
+
+        script(type="module")
             include /js/script.js
-        title Coming Soon
+        script(type="text/javascript" src="http://localhost:8084/faye/client.js")
+        script
+            include /js/dropzone.js
+            
+        if page=='home'
+            title Coming Soon
+        else if page=='contact'||'message_received'
+            title Contact Us
+        else if page=='about'
+            title About Us
+
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(href="/public/icon.png", rel="icon")
         link(href="https://fonts.googleapis.com/css?family=Montserrat&display=swap", rel="stylesheet")
@@ -31,10 +44,11 @@ html
                     img(id="clock-rope-right" class="move" src='/public/rope.png' alt="rope")
                     img(id="clock-rope-left" class="move" src='/public/rope.png' alt="rope")
                     div(id="clock-body")
-                        div(id="clock-body-img" class="move")
+                        img(id="clock-body-img" class="move" src='/public/clock.png' alt="big hand")
+                        div
                             img(id="clock-bhand" class="move" src='/public/bi_hand.png' alt="big hand")
                             img(id="clock-lhand" class="move" src='/public/li_hand.png' alt="little hand")
-                    img(id="cool-girl" class="move" src='/public/cool_girl.png' alt="cool girl")
+                        img(id="cool-girl" class="move" src='/public/cool_girl.png' alt="cool girl")
                     //- div(id="backlight" class="move")
                 img(id="shadow" class="move" src='/public/shadow.png' alt="shadow")
             div(id="title0")
@@ -46,6 +60,8 @@ html
                 include includes/contact.pug
             else if page=='about'
                 include includes/about.pug
+            else if page=='message_received'
+                include includes/message_received.pug
         
         footer
             div(id="f-left")
@@ -54,8 +70,10 @@ html
                 //- p About platform
                 div(class="f-divider")
                 a(href=`${'/contact'}`) Contact Us
+                div(class="f-divider")
+                a(href=`${'/contact'}`) Become A Deus Artist 
 
-            img(id="foot-logo" src='/public/logo.png' alt="logo")
+            //- img(id="foot-logo" src='/public/logo.png' alt="logo")
 
             div(id="f-right")
                 p(id="cpy-rite") Copyright ©  2018-2019 Deus Company S.L. All rights reserved.
