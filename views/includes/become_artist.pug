@@ -1,0 +1,29 @@
+div(id="contact-form")
+    h1 Join Us
+    form(id="contactForm", method="post", action="/contact")
+
+    select(name="topic" form="contactForm")
+        option(value="") Please select a topic
+        option(value="story") I want to submit a story
+        option(value="legal") I have a legal complaint
+        option(value="art") Submit artwork
+        option(value="job") Give me a job
+        option(value="other") Other
+    div(class="field")
+        label(for="name") Your name <span>Required</span>
+        input(name="name", type="text", form="contactForm", required)
+    div(class="field")
+        label(for="email") Your email address <span>Required</span>
+        input(name="email", type="email", form="contactForm", required)
+    div(class="field")
+        label(for="subject") Subject
+        input(name="subject", type="text", form="contactForm")
+    div(class="field")
+        label(for="msg") Message <span>Required</span>
+        textarea(name="msg", form="contactForm", required)
+    label Upload documents
+    form(id="uploadForm", class="dropzone dz-clickable", enctype='multipart/form-data')
+        div(class="fallback")
+            input(type="file", name="file", accept=".zip, .rar, .pdf, .docx, .doc", form="uploadForm", required)
+    //- input(type="submit", value="Upload Document", form="uploadForm")
+    input(type="submit", value="Send Message", form="contactForm")

@@ -33,6 +33,10 @@ app.get('/contact', (req, res) => {
     res.render(PAGE, {page:"contact"});
 });
 
+app.get('/join/artist', (req, res) => {
+    res.render(PAGE, {page:"artist"});
+});
+
 app.post('/contact' , async (req, res) => {
     if(req.body.files){
         req.body.files = req.body.files.split(",")
