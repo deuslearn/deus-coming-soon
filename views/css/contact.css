@@ -1,6 +1,6 @@
 #contact-form{
-    margin-top: 10%;
-    width: 40%;
+    margin-top: 2%;
+    width: 50%;
     min-width: 40%;
 }
 
@@ -18,6 +18,7 @@
 
 #contact-form input[type=email], 
 #contact-form input[type=text], 
+#contact-form input[type=number], 
 #contact-form select, 
 #contact-form textarea, 
 #contact-form #uploadForm{
@@ -28,6 +29,10 @@
     padding-left: 16px;
     border-radius: 5px;
     width: 100%;
+}
+
+.fld-grp1 .field{
+    width: 48.5%;
 }
 
 #contact-form #uploadForm{
@@ -66,6 +71,32 @@
     font-style: italic;
 }
 
+.fld-grp1, .fld-grp2{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#yoe input[type=number]{
+    width: 50px;
+}
+
+.fld-grp2 .field{
+    width: 50%;
+}
+
+#yoe{
+    width: 50%;
+}
+
+#uploadForm{
+    visibility: hidden;
+    height: 0px;
+    min-height: 0px;
+    max-height: 0px;
+    padding: 0;
+}
+
 @media(max-width:1500px){
     #contact-form{
         width: 50%;
@@ -79,10 +110,9 @@
         max-width: 400px;
     }
 
-    #contact-form h1{
+    #contact-title{
         visibility: hidden;
         font-size: 0;
         margin: 0;
-        height: 0
     }
 }

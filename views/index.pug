@@ -23,6 +23,8 @@ html
             title Contact Us
         else if page=='about'
             title About Us
+        else if page=='artist'
+            title Become A Deus Artist
 
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(href="/public/icon.png", rel="icon")
@@ -34,18 +36,17 @@ html
             div(id="right-wrap")
                 if page=="artist"
                     img(class="poster" src='/public/hotmix.png' alt="rope")
-                    div(id="join-msg")
-                        p Deus is looking to work with talented artist of all skill levels to help create content to be viewed by language learners around the world. We are looking for people with different backgrounds from all over with the desire to create and help people tell their stories. If this is you please fill out the form.
+                    img(id="big-logo" src='/public/final-02.png' alt="rope")
                 else
                     div(id="anime-top")
-                        div(class="circle" id="shape1")
-                        div(class="circle1" id="shape2")
-                        div(class="circle1" id="shape3")
-                        div(class="rect" id="shape4")
-                        div(class="rect2" id="shape8")
-                        div(class="rect1" id="shape5")
-                        div(class="bar" id="shape6")
-                        div(class="bar" id="shape7")
+                        //- div(class="circle" id="shape1")
+                        //- div(class="circle1" id="shape2")
+                        //- div(class="circle1" id="shape3")
+                        //- div(class="rect" id="shape4")
+                        //- div(class="rect2" id="shape8")
+                        //- div(class="rect1" id="shape5")
+                        //- div(class="bar" id="shape6")
+                        //- div(class="bar" id="shape7")
                         div(id="anime")
                             img(id="clock-rope-right" class="move" src='/public/rope.png' alt="rope")
                             img(id="clock-rope-left" class="move" src='/public/rope.png' alt="rope")

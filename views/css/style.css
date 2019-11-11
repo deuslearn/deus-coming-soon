@@ -5,10 +5,6 @@ html *{
     color: #FFFFFF;
 }
 
-html, body {
-    height: 100%
-}
-
 html img{
     -khtml-user-select: none;
     -o-user-select: none;
@@ -24,7 +20,19 @@ html img{
     pointer-events: none;
 }
 html{
+    background: #002533;
+    height: 100%;
+    width: 100%;
+}
+
+body{
     background: radial-gradient(#003B4C, #002533);
+    width: 100%;
+    margin: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    min-height: 500px;
 }
 
 h1{
@@ -62,23 +70,35 @@ h2{
     /* float: right; */
     /* min-width: 500px; */
     grid-area: animation;
-    min-height: 500px;
+    /* min-height: 500px; */
 }
 
 #left-wrap{
     grid-area: text;
+    overflow-y: auto;
     /* background: lightseagreen; */
     /* float: left; */
     /* align-items: center; */
 }
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
 
-body{
-    width: 100%;
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
 
-    margin: 0px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow-x: hidden;
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(136, 136, 136, .4);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(136, 136, 136, .6);
 }
 
 main{
@@ -104,29 +124,47 @@ main{
     width: 0;
 }
 
+#big-logo{
+    position: absolute;
+    top: 15%;
+    width: 60%;
+    height: 25%;
+    background: rgb(0, 37, 51, .8);
+    padding: 5px 15px;
+    /* width: 500px; */
+    border-radius: 15px;
+}
+
 .poster{
     position: relative;
     height: 100%;
     width: 100%;
 }
 
-#join-msg{
+/* #join-msg{
     position: absolute;
     top: 35%;
     width: 55%;
     min-width: unset;
     background: rgb(0, 37, 51, .8);
     padding: 0 15px;
-    /* width: 500px; */
     border-radius: 5px;
+} */
+
+#nt-impt0{
+    display: flex;
 }
 
+#add-drop{
+    pointer-events: unset;
+    cursor: pointer;
+    height: 15px;
+    opacity: .3;
+    align-self: center;
+    margin-left: 5px;
+}
 
 @media(max-width:1000px){
-
-    html, body {
-        height: 100%
-    }
 
     #title0{
         position: absolute;
@@ -137,13 +175,15 @@ main{
     }
 
     main{
-        height: 200%;
-
-        /* background: lightskyblue; */
+        height: 250%;
         grid-template-columns: 100%;
-        grid-template-rows: 50% 50% ;
+        grid-template-rows: 40% 60% ;
         grid-template-areas: "animation" "text"; 
-        justify-items: center;
-        align-items: center;
+        justify-items: unset;
+        align-items: unset;
+    }
+
+    #left-wrap{
+        overflow-x: hidden;
     }
 }
