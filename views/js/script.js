@@ -23,9 +23,11 @@ let dz = {
   }
 }
 
-new Choices('#be-subject', {
-  removeItemButton: true,
-});
+if(document.getElementById('be-subject')){
+  new Choices('#be-subject', {
+    removeItemButton: true,
+  });
+}
 
 function processForm(e) {
   let files = ""
