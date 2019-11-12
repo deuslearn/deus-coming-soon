@@ -2,20 +2,23 @@ doctype html
 html
     head
         style
+            include /css/choices/choices.min.css
             include /css/style.css
             include /css/animation.css
             include /css/footer.css
             include /css/mainText.css
             include /css/about.css
             include /css/contact.css
-            include /css/dropzone.css
-            include /css/basic.css
+            include /css/dropzone/dropzone.css
+            include /css/dropzone/basic.css
+            include /css/choices/base.min.css
 
         script(type="module")
             include /js/script.js
-        script(type="text/javascript" src="http://localhost:8084/faye/client.js")
+
         script
-            include /js/dropzone.js
+            include /js/dropzone/dropzone.js
+            include /js/choices/choices.min.js
             
         if page=='home'
             title Coming Soon
@@ -39,14 +42,6 @@ html
                     img(id="big-logo" src='/public/final-02.png' alt="rope")
                 else
                     div(id="anime-top")
-                        //- div(class="circle" id="shape1")
-                        //- div(class="circle1" id="shape2")
-                        //- div(class="circle1" id="shape3")
-                        //- div(class="rect" id="shape4")
-                        //- div(class="rect2" id="shape8")
-                        //- div(class="rect1" id="shape5")
-                        //- div(class="bar" id="shape6")
-                        //- div(class="bar" id="shape7")
                         div(id="anime")
                             img(id="clock-rope-right" class="move" src='/public/rope.png' alt="rope")
                             img(id="clock-rope-left" class="move" src='/public/rope.png' alt="rope")
@@ -56,7 +51,6 @@ html
                                     img(id="clock-bhand" class="move" src='/public/bi_hand.png' alt="big hand")
                                     img(id="clock-lhand" class="move" src='/public/li_hand.png' alt="little hand")
                                 img(id="cool-girl" class="move" src='/public/cool_girl.png' alt="cool girl")
-                            //- div(id="backlight" class="move")
                         img(id="shadow" class="move" src='/public/shadow.png' alt="shadow")
                     div(id="title0")
                         if page=='home'
@@ -82,14 +76,10 @@ html
         footer
             div(id="f-left")
                 a(href=`${'/about'}`) About DEUS
-                //- div(class="f-divider")
-                //- p About platform
                 div(class="f-divider")
                 a(href=`${'/contact'}`) Contact Us
                 div(class="f-divider")
-                a(href=`${'/join/artist'}`) Become A Deus Artist 
-
-            //- img(id="foot-logo" src='/public/logo.png' alt="logo")
+                a(href=`${'/join/artist'}`) Become A Deus Artist
 
             div(id="f-right")
                 p(id="cpy-rite") Copyright ©  2018-2019 Deus Company S.L. All rights reserved.

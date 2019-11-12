@@ -24,6 +24,7 @@
     "nodemailer": "^6.3.1",
     "nodemon": "^1.19.4",
     "pug": "^2.0.4",
+    "simple-node-logger": "^18.12.23",
     "simplebar": "^5.0.3"
   },
   "devDependencies": {}

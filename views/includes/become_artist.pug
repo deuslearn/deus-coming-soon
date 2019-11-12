@@ -3,18 +3,20 @@ div(id="contact-form")
     div(id="join-msg")
         p Deus is looking to work with talented artist of all skill levels to help create content to be viewed by language learners around the world. We are looking for people with different backgrounds from all over with the desire to create and help people tell their stories. If this sounds like you tell us about yourself below.
 
-    form(id="contactForm", method="post", action="/contact")
+    form(id="contactForm", method="post", action="/contact", autocomplete="off")
 
     div(class="fld-grp1")
         div(class="field")
             label(for="name") Name <span>Required</span>
-            input(name="name", type="text", form="contactForm", required)
+            input(class="in-text" name="name", type="text", form="contactForm", required)
         div(class="field")
             label(for="name") Pen Name
-            input(name="name", type="text", form="contactForm")
+            input(class="in-text" name="name", type="text", form="contactForm")
+
     div(class="field")
         label(for="email") Email address <span>Required</span>
         input(name="email", type="email", form="contactForm", required)
+    
     div(class="fld-grp2")
         div(class="field" id="yoe")
             label(for="subject") Years of Experience
@@ -186,20 +188,25 @@ div(id="contact-form")
                 option(value="ZM") Zambia
                 option(value="ZW") Zimbabwe
                 option(value="OTHER") Other
+    
     div(class="field")
         label(for="subject") Spoken languages
-        input(name="subject", type="text", form="contactForm")
+        input(id="be-subject" name="subject", type="text", form="contactForm")
+    
     div(class="field")
         label(for="msg") Why do you want work with DEUS? <span>Required</span>
         textarea(name="msg", form="contactForm", required)
+    
     div(class="field")
         label(for="msg") Link to public work
         textarea(name="msg", form="contactForm")
+    
     div(id="nt-impt0")
         label Attach Files 
         img(id="add-drop" src="/public/add.png" alt="fdsfd")
+    
     form(id="uploadForm", class="dropzone dz-clickable", enctype='multipart/form-data')
         div(class="fallback")
             input(type="file", name="file", accept=".zip, .rar, .pdf, .docx, .doc", form="uploadForm", required)
-    //- input(type="submit", value="Upload Document", form="uploadForm")
+    
     input(type="submit", value="Send Message", form="contactForm")

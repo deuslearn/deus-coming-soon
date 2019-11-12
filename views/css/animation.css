@@ -1,16 +1,10 @@
 #anime-top{
-    /* background: lightsalmon; */
     height:90%;
     width: 60%;
-    /* grid-area: animation; */
     position: relative;
-    /* margin-right: 30%; */
-    /* right: 50px; */
-    
 }
 
 #anime{
-    /* background: lightseagreen; */
     height: 73.7%;
     width: 100%;
     top: 60px;
@@ -31,7 +25,6 @@
 #clock-body-img{
     height: 100%;
     width: 100%;
-    /* border-radius: 50%; */
     top: 0px;
     right: 0px;
 }
@@ -48,7 +41,6 @@
 }
 
 #clock-bhand{
-    /* background: chartreuse; */
     left: 44.6%;
     top: 14%;
     height: 37%;

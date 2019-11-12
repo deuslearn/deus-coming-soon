@@ -17,7 +17,7 @@
 }
 
 #contact-form input[type=email], 
-#contact-form input[type=text], 
+.in-text, 
 #contact-form input[type=number], 
 #contact-form select, 
 #contact-form textarea, 
@@ -29,6 +29,37 @@
     padding-left: 16px;
     border-radius: 5px;
     width: 100%;
+}
+
+#contact-form input[type=email]:focus, 
+#contact-form input[type=number]:focus,
+.in-text:focus,
+#contact-form select:focus, 
+#contact-form textarea:focus, 
+#contact-form #uploadForm:focus {
+    outline: none !important;
+    border: 1px solid #10AFD0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.choices__item{
+    /* background-color: #035F75; */
+    color: black;
+}
+
+#contact-form input[type=text]{
+    background-color: transparent;
+}
+
+.choices__inner{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid #035F75;
 }
 
 .fld-grp1 .field{

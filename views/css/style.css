@@ -51,9 +51,6 @@ h2{
     font-weight: 500;
     font-size: 17px;
     margin-top: 0px;
-    /* line-height: 21px; */
-    /* identical to box height */
-
     letter-spacing: 0.1105px;
 }
 
@@ -66,37 +63,27 @@ h2{
 }
 
 #right-wrap{
-    /* background: lightsalmon; */
-    /* float: right; */
-    /* min-width: 500px; */
     grid-area: animation;
-    /* min-height: 500px; */
 }
 
 #left-wrap{
     grid-area: text;
     overflow-y: auto;
-    /* background: lightseagreen; */
-    /* float: left; */
-    /* align-items: center; */
 }
-/* width */
+
 ::-webkit-scrollbar {
     width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: rgb(136, 136, 136, .4);
     border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(136, 136, 136, .6);
 }
@@ -131,7 +118,6 @@ main{
     height: 25%;
     background: rgb(0, 37, 51, .8);
     padding: 5px 15px;
-    /* width: 500px; */
     border-radius: 15px;
 }
 
@@ -140,16 +126,6 @@ main{
     height: 100%;
     width: 100%;
 }
-
-/* #join-msg{
-    position: absolute;
-    top: 35%;
-    width: 55%;
-    min-width: unset;
-    background: rgb(0, 37, 51, .8);
-    padding: 0 15px;
-    border-radius: 5px;
-} */
 
 #nt-impt0{
     display: flex;

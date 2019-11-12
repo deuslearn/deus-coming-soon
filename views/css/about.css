@@ -2,12 +2,8 @@
     width: 60%;
     min-width: 470px;
     align-self: center;
-    /* min-width: 400px; */
-    /* height: 200px; */
     grid-area: text;
     z-index: 3;
-    /* justify-self: left; */
-    /* margin-left: 22%; */
 }
 
 .about-p{

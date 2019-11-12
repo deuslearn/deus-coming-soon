@@ -1,16 +1,13 @@
 let dropzone = null
 let dz = {
   url: "/upload_document",
-  paramName: 'file', // The name that will be used to transfer the file
+  paramName: 'file',
   maxFiles: 2,
-  maxFilesize: 2, // MB
+  maxFilesize: 2,
   addRemoveLinks: true,
   acceptedFiles: ".zip,.rar,.pdf,.docx,.doc",
   accept: function(file, done) {
-    // console.log(file)
     if (file.name == "justinbieber.jpg") {
-    //   var _ref;
-    //  (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
       done("No biebers please");
     }
     else { 
@@ -18,7 +15,6 @@ let dz = {
     }
   },
   removedfile: function(file) {
-    // console.log(file)
     let Http = new XMLHttpRequest();
     Http.open("DELETE", `http://localhost:8084/file/${file.name}`, true)
     Http.send();
@@ -27,20 +23,22 @@ let dz = {
   }
 }
 
+new Choices('#be-subject', {
+  removeItemButton: true,
+});
+
 function processForm(e) {
-  console.log(dropzone.files)
-  console.log("I won't do it")
   let files = ""
   for(let i=0; i<dropzone.files.length; i++){
     files+=dropzone.files[i].name+(i!==dropzone.files.length-1?",":"")
   }
   if(files){
-    let input = document.createElement('input');//prepare a new input DOM element
-    input.setAttribute('name', "files");//set the param name
-    input.setAttribute('value', files);//set the value
-    input.setAttribute('type', "hidden")//set the type
+    let input = document.createElement('input');
+    input.setAttribute('name', "files");
+    input.setAttribute('value', files);
+    input.setAttribute('type', "hidden")
 
-    e.target.appendChild(input);//append the input to the form
+    e.target.appendChild(input);
   }
     
 }
@@ -48,7 +46,6 @@ function processForm(e) {
 Dropzone.options.uploadForm = false;
 
 let showDropZone = () => {
-  console.log("hello")
   dropzone = new Dropzone("form#uploadForm", dz);
   
   var form = document.getElementById('contactForm');
@@ -122,16 +119,14 @@ function fixbody(x){
 };
 
 window.onload = () => {
-
   let plus =document.getElementById("add-drop")
   if(plus){
     plus.addEventListener("click",showDropZone,false)
-    console.log(plus)
   }
   
   var x = window.matchMedia("(max-width: 1000px)")
-  fixbody(x) // Call listener function at run time
-  x.addListener(fixbody) // Attach listener function on state changes\
+  fixbody(x)
+  x.addListener(fixbody)
   
   if(document.getElementById("anime-top"))
     clockAnimation()

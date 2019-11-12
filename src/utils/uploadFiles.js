@@ -16,7 +16,6 @@ module.exports = class CloudHandler{
             projectId : id
         })
         
-        // storage.getBuckets().then(x=> console.log(x))
         this.bucket = storage.bucket(BUCKET_NAME);
 
         let multerStorage = Multer.diskStorage({
