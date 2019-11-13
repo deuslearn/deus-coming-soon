@@ -54,13 +54,13 @@ html
                         img(id="shadow" class="move" src='/public/shadow.png' alt="shadow")
                     div(id="title0")
                         if page=='home'
-                            title=title.home
+                            h1=title.home
                         else if page=='contact'
-                            title=title.contact
+                            h1=title.contact
                         else if page=='about'
-                            title=title.about
+                            h1=title.about
                         else if page=='artist'
-                            title=title.artist
+                            h1=title.artist
             div(id="left-wrap")
                 if page=='home'
                     include includes/home_coming.pug
