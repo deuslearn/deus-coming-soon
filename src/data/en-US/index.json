@@ -1,0 +1,21 @@
+{
+    "title":{ 
+        "home":"Coming Soon",
+        "about":"About Us",
+        "contact":"Contact Us",
+        "artist":"Become A Deus Artist"
+    },
+    "footer":{
+        "about": "About DEUS",
+        "contact": "Contact Us",
+        "artist": "Become A Deus Artist"
+    },
+    "sup_languages":{
+        "en-US":"English",
+        "ja-JA":"日本語",
+        "ko-KO":"한국어"
+    },
+    "require": "Required",
+    "hunnid5":"Under 500 characters",
+    "submit": "Submit"
+}

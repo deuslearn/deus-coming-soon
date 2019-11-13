@@ -3,15 +3,14 @@ html
     head
         style
             include /css/choices/choices.min.css
-            include /css/style.css
             include /css/animation.css
             include /css/footer.css
-            include /css/mainText.css
             include /css/about.css
             include /css/contact.css
             include /css/dropzone/dropzone.css
             include /css/dropzone/basic.css
-            include /css/choices/base.min.css
+            include /css/style.css
+            include /css/mainText.css
 
         script(type="module")
             include /js/script.js
@@ -21,13 +20,13 @@ html
             include /js/choices/choices.min.js
             
         if page=='home'
-            title Coming Soon
+            title=title.home
         else if page=='contact'||'message_received'
-            title Contact Us
+            title=title.contact
         else if page=='about'
-            title About Us
+            title=title.about
         else if page=='artist'
-            title Become A Deus Artist
+            title=title.artist
 
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(href="/public/icon.png", rel="icon")
@@ -41,6 +40,7 @@ html
                     img(class="poster" src='/public/hotmix.png' alt="rope")
                     img(id="big-logo" src='/public/final-02.png' alt="rope")
                 else
+                    img(id="animation-back" src="/public/animation-back.png" alt="back")
                     div(id="anime-top")
                         div(id="anime")
                             img(id="clock-rope-right" class="move" src='/public/rope.png' alt="rope")
@@ -54,13 +54,13 @@ html
                         img(id="shadow" class="move" src='/public/shadow.png' alt="shadow")
                     div(id="title0")
                         if page=='home'
-                            h1 COMING SOON
+                            title=title.home
                         else if page=='contact'
-                            h1 Contact us
+                            title=title.contact
                         else if page=='about'
-                            h1 about deus
+                            title=title.about
                         else if page=='artist'
-                            h1 Join us
+                            title=title.artist
             div(id="left-wrap")
                 if page=='home'
                     include includes/home_coming.pug
@@ -75,18 +75,20 @@ html
         
         footer
             div(id="f-left")
-                a(href=`${'/about'}`) About DEUS
+                a(href=`${'/about'}`)=footer.about
                 div(class="f-divider")
-                a(href=`${'/contact'}`) Contact Us
+                a(href=`${'/contact'}`)=footer.contact
                 div(class="f-divider")
-                a(href=`${'/join/artist'}`) Become A Deus Artist
+                a(href=`${'/join/artist'}`)=footer.artist
 
             div(id="f-right")
                 p(id="cpy-rite") Copyright ©  2018-2019 Deus Company S.L. All rights reserved.
-                img(class="sns" src='/public/fb.png' alt="facebook")
-                img(class="sns" src='/public/tweet.png' alt="twitter")
-                img(class="sns" src='/public/insta.png' alt="instagram")
-                select
-                    option(value="en") English
-                    option(value="ja") 日本語
-                    option(value="ko") 한국어
+                a(class="sns" href=`${"/"}`) 
+                    img(src='/public/fb.png' alt="facebook")
+                a(class="sns" href=`${"https://twitter.com/DeusSNS"}`) 
+                    img(src='/public/tweet.png' alt="twitter" )
+                a(class="sns" href=`${"https://www.instagram.com/deussns/"}`) 
+                    img(src='/public/insta.png' alt="instagram")
+                select(id="locale")
+                    each val, index in sup_languages
+                        option(value=index selected=index==locale?"selected":undefined)=val

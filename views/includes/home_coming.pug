@@ -1,30 +1,28 @@
 div(id="main-text")
     div(id="title")
-        h1 COMING SOON
-        h2 The platform is under construction
+        h1=cs_title
+        h2=sub
     
     div(id="counters")
         div(class="di-block")
             div(class="digit" id="day")
                 p(class="di") 0
-            p(class="t-unit") Day
+            p(class="t-unit")=counter.day
         div(class="di-block")
             div(class="digit" id="hrs")
                 p(class="di") 0
-            p(class="t-unit") Hour
+            p(class="t-unit")=counter.hour
         div(class="di-block")
             div(class="digit" id="min")
                 p(class="di") 0
-            p(class="t-unit") Minute
+            p(class="t-unit")=counter.min
         div(class="di-block")
             div(class="digit" id="sec")
                 p(class="di") 0
-            p(class="t-unit") Second
+            p(class="t-unit")=counter.sec
     
-    h2 Subscribe to get updates on current progress <span>
-        img(id="dues" src='/public/deus.png' alt="deus")
-        </span> and to be alerted when the count down begins.
+    h2=subscribe
     
     form
-        input(type="email", name="email", placeholder="Email")
+        input(type="email", name="email", placeholder=wrd_email)
         input(type="submit" value=" ")

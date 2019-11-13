@@ -26,6 +26,7 @@ let dz = {
 if(document.getElementById('be-subject')){
   new Choices('#be-subject', {
     removeItemButton: true,
+    maxItemCount: 7
   });
 }
 
@@ -119,6 +120,34 @@ function fixbody(x){
   body.style.width=w+"px"
   body.style.height=h+"px"
 };
+
+async function setLocale(e){
+  await new Promise(function (resolve, reject) {
+    let Http = new XMLHttpRequest();
+    Http.open("GET", `/locale/${e.target.value}`, true);
+    Http.onload = function () {
+      if (this.status >= 200 && this.status < 300) {
+        resolve(Http.response);
+      } else {
+        reject({
+          status: this.status,
+          statusText: Http.statusText
+        });
+      }
+    };
+    Http.onerror = function () {
+      reject({
+        status: this.status,
+        statusText: Http.statusText
+      });
+    };
+    Http.send();
+  });
+  window.location.reload(true); 
+}
+
+let locale=document.getElementById("locale")
+locale.onchange=setLocale
 
 window.onload = () => {
   let plus =document.getElementById("add-drop")

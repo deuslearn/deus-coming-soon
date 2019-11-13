@@ -51,15 +51,21 @@ input[type=number]::-webkit-outer-spin-button {
     /* background-color: #035F75; */
     color: black;
 }
+.choices__list--dropdown b{
+    color:black;
+}
 
 #contact-form input[type=text]{
     background-color: transparent;
+    padding-left: 16px;
+    padding-top: 12px;
 }
 
 .choices__inner{
     background-color: transparent;
     border-radius: 5px;
     border: 1px solid #035F75;
+    padding: 0 ;
 }
 
 .fld-grp1 .field{
@@ -75,9 +81,9 @@ input[type=number]::-webkit-outer-spin-button {
 #contact-form textarea{
     height: unset;
     max-width: 120%;
-    max-height: 300px;
+    max-height: 250px;
     padding: 16px;
-    resize: none;
+    resize: vertical;
 }
 
 #contact-form select{
@@ -145,5 +151,9 @@ input[type=number]::-webkit-outer-spin-button {
         visibility: hidden;
         font-size: 0;
         margin: 0;
+    }
+
+    input{
+        font-size: 1em;
     }
 }

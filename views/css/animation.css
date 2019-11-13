@@ -3,6 +3,12 @@
     width: 60%;
     position: relative;
 }
+#animation-back{
+    position: absolute;
+    top:5%;
+    width: 95%;
+    height: 90%;
+}
 
 #anime{
     height: 73.7%;
