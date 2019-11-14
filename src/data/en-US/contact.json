@@ -1,11 +1,11 @@
 {
     "topic":{
         "0": "Please select a topic",
-        "1": "I want to submit a story",
-        "2": "I have a legal complaint",
-        "3": "Submit artwork",
-        "4": "Give me a job",
-        "5": "Other"
+        "story": "I want to submit a story",
+        "legal": "I have a legal complaint",
+        "art": "Submit artwork",
+        "job": "Give me a job",
+        "other": "Other"
     },
     "form": {
         "name": "Name",

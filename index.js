@@ -32,69 +32,14 @@ app.locals.basedir = app.get('views');
 
 app.use("/public", express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-    let l = req.locale
-    console.log(l.toString())
+function renderPage(req, res){
     res.render(PAGE, {
-        page: 'home',
-        locale: l.toString(),
-        ...SiteText[l.language].index,
-        ...SiteText[l.language].main,
+        page: req.pagez,
+        locale: req.locale.toString(),
+        ...SiteText[req.locale.language].index,
+        ...SiteText[req.locale.language][req.pagez]
     });
-});
-
-app.get('/about', (req, res) => {
-    let l = req.locale.language
-    res.render(PAGE, {
-        page: "about",
-        locale: l,
-        ...SiteText[l].index,
-        ...SiteText[l].about
-    });
-});
-
-app.get('/contact', (req, res) => {
-    let l = req.locale.language
-    res.render(PAGE, {
-        page:"contact",
-        locale: l,
-        ...SiteText[l].index,
-        ...SiteText[l].contact
-    });
-});
-
-app.get('/join/artist', (req, res) => {
-    let l = req.locale.language
-    res.render(PAGE, {
-        page:"artist",
-        locale: l,
-        ...SiteText[l].index,
-        ...SiteText[l].artist_join
-    });
-});
-
-app.post('/contact' , async (req, res) => {
-    if(req.body.files){
-        req.body.files = req.body.files.split(",")
-    }
-
-    let resp = null
-    switch(req.body.topic){
-        case "other":
-        case "legal":
-            resp = await service.relayToDeusInfo(req.body)
-            break;
-        case "art":
-        case "job":
-        case "story":
-        default:
-            break
-    }
-    if(resp)
-        res.render(PAGE, {page: "message_received"})
-    else
-        res.render(PAGE, {page: "submit_error"});
-});
+}
 
 app.get("/locale/:loc", (req, res) => {
     res.cookie('locale', req.params.loc, {httpOnly: true});
@@ -105,9 +50,78 @@ app.get("/locale/:loc", (req, res) => {
     return;
 })
 
-app.post('/join/artist', (req, res) => {
-    res.render(PAGE, {page: "message_received"})
-})
+app.get('/', (req, res, next) => {
+    req.pagez="main"
+    next()
+}, renderPage);
+
+app.get('/about', (req, res, next) => {
+    req.pagez="about"
+    next()
+}, renderPage);
+
+app.get('/contact', (req, res, next) => {
+    req.pagez="contact"
+    next()
+}, renderPage);
+
+app.post('/contact' , async (req, res, next) => {
+    if(req.body.files){
+        req.body.files = req.body.files.split(",")
+    }
+    
+    let resp = null
+    switch(req.body.topic){
+        case "other":
+        case "legal":
+            resp = await service.relayToDeusInfo(req.body)
+            break;
+        case "art":
+        case "job":
+        case "story":
+        default:
+            resp = true
+            break
+    }
+    if(resp==true){
+        req.pagez="message_received";   
+        next()
+    }    
+    else{
+        res.render(PAGE, {
+            page: "message_received",
+            locale: req.locale.toString(),
+            ...SiteText[req.locale.language].index,
+            thanks: "There was an error with your submission",
+            ab_style: "text-align:left;",
+            ...resp
+        });
+    }
+}, renderPage)
+
+app.get('/join/artist', (req, res, next) => {
+    req.pagez="artist_join"
+    next()
+}, renderPage);
+
+app.post('/join/artist', async (req, res, next) => {
+    // console.log(req.body)
+    resp = await service.relayToDeusInfo(req.body, "join")
+    if(resp==true){
+        req.pagez="message_received";   
+        next()
+    }    
+    else{
+        res.render(PAGE, {
+            page: "message_received",
+            locale: req.locale.toString(),
+            ...SiteText[req.locale.language].index,
+            thanks: "There was an error with your submission",
+            ab_style: "text-align:left;",
+            ...resp
+        });
+    }
+}, renderPage)
 
 app.post('/upload_document', handler.uploadFile.single('file'), (req, res) => {
     console.log("Upload Complete")
@@ -118,4 +132,5 @@ app.delete('/file/:fileName', (req, res) => {
     handler.deleteFile(req.params.fileName)
     res.send(true)
 })
+
 app.listen(PORT)

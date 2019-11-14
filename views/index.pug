@@ -19,13 +19,13 @@ html
             include /js/dropzone/dropzone.js
             include /js/choices/choices.min.js
             
-        if page=='home'
+        if page=='main'
             title=title.home
         else if page=='contact'||'message_received'
             title=title.contact
         else if page=='about'
             title=title.about
-        else if page=='artist'
+        else if page=='artist_join'
             title=title.artist
 
         meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -36,7 +36,7 @@ html
             a(id="head-logo" href=`${'/'}`) 
                 img( src='/public/logo.png' alt="logo")
             div(id="right-wrap")
-                if page=="artist"
+                if page=="artist_join"
                     img(class="poster" src='/public/hotmix.png' alt="rope")
                     img(id="big-logo" src='/public/final-02.png' alt="rope")
                 else
@@ -53,7 +53,7 @@ html
                                 img(id="cool-girl" class="move" src='/public/cool_girl.png' alt="cool girl")
                         img(id="shadow" class="move" src='/public/shadow.png' alt="shadow")
                     div(id="title0")
-                        if page=='home'
+                        if page=='main'
                             h1=title.home
                         else if page=='contact'
                             h1=title.contact
@@ -62,7 +62,7 @@ html
                         else if page=='artist'
                             h1=title.artist
             div(id="left-wrap")
-                if page=='home'
+                if page=='main'
                     include includes/home_coming.pug
                 else if page=='contact'
                     include includes/contact.pug
@@ -70,7 +70,7 @@ html
                     include includes/about.pug
                 else if page=='message_received'
                     include includes/message_received.pug
-                else if page=='artist'
+                else if page=='artist_join'
                     include includes/become_artist.pug
         
         footer

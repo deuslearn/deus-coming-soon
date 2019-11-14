@@ -29,15 +29,15 @@ div(id="contact-form")
     
     div(class="field")
         label(for="languages")=form.langs
-        input(id="be-subject" name="languages", type="text", form="contactForm")
+        input(id="be-language" name="languages", type="text", form="contactForm")
     
     div(class="field")
         label(for="msg")=form.why
         textarea(name="msg", rows="4", maxlength="500", form="contactForm", placeholder=hunnid5, required)
     
     div(class="field")
-        label(for="link")
-        textarea(name="link", maxlength="500", form="contactForm")
+        label(for="lowers")=form.links
+        input(id="linkit" name="lowers", type="text", form="contactForm")
     
     div(id="nt-impt0")
         label Attach Files 

@@ -23,10 +23,16 @@ let dz = {
   }
 }
 
-if(document.getElementById('be-subject')){
-  new Choices('#be-subject', {
-    removeItemButton: true,
+if(document.getElementById('be-language')){
+  new Choices('#be-language', {
     maxItemCount: 7
+  });
+}
+
+if(document.getElementById('linkit')){
+  new Choices('#linkit', {
+    removeItemButton: true,
+    maxItemCount: 3
   });
 }
 
@@ -122,6 +128,7 @@ function fixbody(x){
 };
 
 async function setLocale(e){
+  console.log(e.target.value)
   await new Promise(function (resolve, reject) {
     let Http = new XMLHttpRequest();
     Http.open("GET", `/locale/${e.target.value}`, true);
