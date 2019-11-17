@@ -3,4 +3,5 @@ package-lock.json
 Deus_Platform*
 noreply_creds.json
 tmp/
-.bk_*
+*.log
+*.yaml

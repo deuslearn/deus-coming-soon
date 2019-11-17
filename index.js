@@ -1,31 +1,31 @@
-const path = require('path')
-const express = require('express')
-const bodyParser = require('body-parser')
-const cookie = require('cookie');
-const cookieParser = require('cookie-parser')
+const path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const createLocaleMiddleware = require('express-locale');
+const logger = require('./src/utils/logger')
 
-const CloudHandler = require('./src/utils/uploadFiles')
-const MessageService = require('./src/MessageService')
+const FileHandler = require('./src/utils/uploadFiles');
+const MessageService = require('./src/MessageService');
 
-const SiteText = require("./src/SiteText")
+const SiteText = require("./src/SiteText");
 
 const PORT = process.env.PORT || 8084;
-const PAGE = "index"
+const PAGE = "index";
 
-const service = new MessageService()
-const handler = new CloudHandler()
+const service = new MessageService(logger);
+const handler = new FileHandler(logger);
 
-const app = express()
+const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(createLocaleMiddleware({
     "priority": ["cookie", "default"],
     "default": "en-US"
-}))
+}));
 
-app.set('view engine', 'pug')
+app.set('view engine', 'pug');
 app.set('env production');
 
 app.locals.basedir = app.get('views');
@@ -40,15 +40,6 @@ function renderPage(req, res){
         ...SiteText[req.locale.language][req.pagez]
     });
 }
-
-app.get("/locale/:loc", (req, res) => {
-    res.cookie('locale', req.params.loc, {httpOnly: true});
- 
-    res.statusCode = 302;
-    res.setHeader('Location', req.headers.referer || '/');
-    res.end();
-    return;
-})
 
 app.get('/', (req, res, next) => {
     req.pagez="main"
@@ -69,16 +60,15 @@ app.post('/contact' , async (req, res, next) => {
     if(req.body.files){
         req.body.files = req.body.files.split(",")
     }
-    
     let resp = null
     switch(req.body.topic){
         case "other":
         case "legal":
-            resp = await service.relayToDeusInfo(req.body)
-            break;
         case "art":
         case "job":
         case "story":
+            resp = await service.relayToDeusInfo(req.body)
+            break;
         default:
             resp = true
             break
@@ -97,7 +87,17 @@ app.post('/contact' , async (req, res, next) => {
             ...resp
         });
     }
-}, renderPage)
+}, renderPage);
+
+app.get('/subscribed', (req, res) => {
+    res.render(PAGE, {
+        page: "message_received",
+        locale: req.locale.toString(),
+        ...SiteText[req.locale.language].index,
+        thanks2: "Thank you for subscribing!",
+        confirm: "Please confirm your email address in the confirmation email sent to start receiving updates."
+    });
+});
 
 app.get('/join/artist', (req, res, next) => {
     req.pagez="artist_join"
@@ -105,7 +105,6 @@ app.get('/join/artist', (req, res, next) => {
 }, renderPage);
 
 app.post('/join/artist', async (req, res, next) => {
-    // console.log(req.body)
     resp = await service.relayToDeusInfo(req.body, "join")
     if(resp==true){
         req.pagez="message_received";   
@@ -121,16 +120,25 @@ app.post('/join/artist', async (req, res, next) => {
             ...resp
         });
     }
-}, renderPage)
+}, renderPage);
 
 app.post('/upload_document', handler.uploadFile.single('file'), (req, res) => {
-    console.log("Upload Complete")
+    logger.info("Upload Complete")
     res.send(true)
-})
+});
 
 app.delete('/file/:fileName', (req, res) => {
     handler.deleteFile(req.params.fileName)
     res.send(true)
-})
+});
 
-app.listen(PORT)
+app.get("/locale/:loc", (req, res) => {
+    res.cookie('locale', req.params.loc, {httpOnly: true});
+    res.statusCode = 302;
+    res.setHeader('Location', req.headers.referer || '/');
+    res.end();
+    return;
+});
+
+logger.info(`Application listening on port ${PORT}`)
+app.listen(PORT);

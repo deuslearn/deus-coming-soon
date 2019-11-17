@@ -5,12 +5,15 @@ const fs = require("fs");
 const FILEDIR = path.join(__dirname + '/../tmp')
 
 module.exports = class MessageService{
-    constructor(){
-        let creds = fs.readFileSync(path.join(__dirname + "/utils/noreply_creds.json"))
+    constructor(logger){
+        this.logger = logger
         this.transport = nodemailer.createTransport({
             host: 'smtp.zoho.com',
             port: 465,
-            auth: JSON.parse(creds)
+            auth: process.env.EMAIL_USER?{
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
+            }:JSON.parse(fs.readFileSync(path.join(__dirname + "/utils/noreply_creds.json")))
         });
     }
 
@@ -63,10 +66,10 @@ module.exports = class MessageService{
         }
     }
 
-    async relayToDeusInfo(contactData, msgType="contact"){
+    async relayToDeusInfo(contactData, subj=null, msgType="contact"){
         return await this.transport.sendMail(msgType=="join"?this.joinTemplate(contactData):this.contactTemplate(contactData))
         .then((sent)=>{
-            console.log(sent)
+            this.logger.info(sent)
             if(contactData.files){
                 contactData.files.forEach(element => {
                     this.deleteFile(element)
@@ -75,7 +78,7 @@ module.exports = class MessageService{
             return true
         })
         .catch((err)=>{
-            console.error(err.code)
+            this.logger.error(err.message)
             if(err.code == "EMESSAGE"){
                 return {
                     resp: "One of your attached files is of or contains a file type deemed unsecure. If your submission contains one or more of the following file types please remove them and resubmit:",
@@ -89,8 +92,8 @@ module.exports = class MessageService{
 
     deleteFile(fileName){
         fs.unlink(`${FILEDIR}/${fileName}`, (err)=>{
-            if(err) console.error(err.message)
-            console.log(`${FILEDIR}/${fileName} was deleted`);
+            if(err) this.logger.error(err.message)
+            this.logger.info(`${FILEDIR}/${fileName} was deleted`);
         })
     }
 }

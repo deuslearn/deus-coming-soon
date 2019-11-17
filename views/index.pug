@@ -18,10 +18,15 @@ html
         script
             include /js/dropzone/dropzone.js
             include /js/choices/choices.min.js
+
+        script(type="text/javascript" src="https://publ.maillist-manage.com/js/optin.min.js" onload="setupSF('sf3a9e5ddc812a00352207941e7468fd11e730b2e77c9fe8b7','ZCFORMVIEW',false,'light')")
+        script(type="text/javascript").
+            function runOnFormSubmit_sf3a9e5ddc812a00352207941e7468fd11e730b2e77c9fe8b7(th){
+            };
             
         if page=='main'
             title=title.home
-        else if page=='contact'||'message_received'
+        else if page=='contact'||page=='message_received'
             title=title.contact
         else if page=='about'
             title=title.about

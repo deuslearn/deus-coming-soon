@@ -113,17 +113,12 @@ function fixbody(x){
   let html = document.getElementsByTagName("html")[0]
   let body = document.getElementsByTagName("body")[0]
   if (!x.matches){
-    html.style.width="100%"
     html.style.height="100%"
-    body.style.width="100%"
     body.style.height="100%"
     return
   }
-  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-  html.style.width=w+"px"
   html.style.height=h+"px"
-  body.style.width=w+"px"
   body.style.height=h+"px"
 };
 

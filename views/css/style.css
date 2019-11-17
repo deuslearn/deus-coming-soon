@@ -103,7 +103,7 @@ main{
     position: fixed;
     top: 1em;
     left: 2em;
-    z-index: 3;
+    z-index: 4;
 }
 
 #title0{
