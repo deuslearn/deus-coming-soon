@@ -75,6 +75,7 @@
 @media(max-width: 1000px){
 
     #main-text{
+        width: 80%;
         text-align: center; 
     }
 
@@ -82,8 +83,12 @@
         visibility: hidden;
         font-size: 0;
         margin: 0;
-        height: 0
+        height: 0;
     }
+
+    /* #sf3a9e5ddc812a00352207941e7468fd11e730b2e77c9fe8b7{
+        justify-self: center;
+    } */
 
     #counters{
         margin-left: unset;
