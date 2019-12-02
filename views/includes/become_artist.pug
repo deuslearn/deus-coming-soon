@@ -5,42 +5,30 @@ div(id="contact-form")
 
     form(id="contactForm", method="post", action="/join/artist", autocomplete="off")
 
-    div(class="fld-grp1")
-        div(class="field")
-            label(for="name")=form.name
-            input(class="in-text" name="name", type="text", form="contactForm", required)
-        div(class="field")
-            label(for="pen")=form.pen
-            input(class="in-text" name="pen", type="text", form="contactForm")
+    div(class="field")
+        label(for="name") #{form.name} <span style="font-style: italic;">(Required)</span>
+        input(class="in-text" name="name", type="text", form="contactForm", required)
 
     div(class="field")
-        label(for="email")=form.email
+        label(for="email") #{form.email} <span style="font-style: italic;">(Required)</span>
         input(name="email", type="email", form="contactForm", required)
     
-    div(class="fld-grp2")
-        div(class="field" id="yoe")
-            label(for="exp")=form.exp
-            input(name="exp", type="number", form="contactForm", value="0")
-        div(class="field")
-            label(for="country")=form.country
-            select(name="country", form="contactForm", require)
-                each val, index in countries
-                    option(value=index)=val
+    div(class="field")
+        label(for="country")=form.country
+        select(name="country", form="contactForm", require)
+            each val, index in countries
+                option(value=index)=val
     
     div(class="field")
         label(for="languages")=form.langs
         input(id="be-language" name="languages", type="text", form="contactForm")
     
     div(class="field")
-        label(for="msg")=form.why
-        textarea(name="msg", rows="4", maxlength="500", form="contactForm", placeholder=hunnid5, required)
-    
-    div(class="field")
         label(for="lowers")=form.links
         input(id="linkit" name="lowers", type="text", form="contactForm")
     
     div(id="nt-impt0")
-        label Attach Files 
+        label Attach Files <span style="font-style: italic;">(Optional)</span>
         img(id="add-drop" src="/public/add.png" alt="fdsfd")
     
     form(id="uploadForm", class="dropzone dz-clickable", enctype='multipart/form-data')

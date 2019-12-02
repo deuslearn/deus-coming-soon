@@ -1,4 +1,4 @@
-{
+module.exports = {
     "cs_title": "近日公開",
     "sub":"プラットフォームは工事中です",
     "counter":{

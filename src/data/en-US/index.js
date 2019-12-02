@@ -1,4 +1,4 @@
-{
+module.exports = {
     "title":{ 
         "home":"Coming Soon",
         "about":"About DEUS",

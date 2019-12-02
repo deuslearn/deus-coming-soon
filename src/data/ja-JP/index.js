@@ -1,4 +1,4 @@
-{
+module.exports = {
     "title":{ 
         "home":"近日公開",
         "about":"私たちに関しては",

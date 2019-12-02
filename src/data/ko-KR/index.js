@@ -1,4 +1,4 @@
-{
+module.exports = {
     "title":{ 
         "home": "곧 출시 예정",
         "about": "회사 소개",

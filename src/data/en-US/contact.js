@@ -1,4 +1,4 @@
-{
+module.exports = {
     "topic":{
         "0": "Please select a topic",
         "story": "I want to submit a story",

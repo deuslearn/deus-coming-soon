@@ -1,4 +1,4 @@
-{
+module.exports = {
     "cs_title": "출시 예정",
     "sub": "플랫폼이 건설 중입니다",
     "counter":{

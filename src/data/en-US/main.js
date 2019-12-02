@@ -1,4 +1,4 @@
-{
+module.exports = {
     "cs_title": "COMING SOON",
     "sub":"The platform is under construction",
     "counter":{
