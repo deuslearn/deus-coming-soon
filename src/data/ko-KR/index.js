@@ -16,6 +16,7 @@ module.exports = {
         "ko-KR": "한국어"
     },
     "require": "필수",
+    "optional": "선택 과목",
     "hunnid5": "500 자 미만",
     "submit": "제출"
 }

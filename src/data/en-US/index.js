@@ -16,6 +16,7 @@ module.exports = {
         "ko-KR":"한국어"
     },
     "require": "Required",
+    "optional": "Optional",
     "hunnid5":"Under 500 characters",
     "submit": "Submit"
 }

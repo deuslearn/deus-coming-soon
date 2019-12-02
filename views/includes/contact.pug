@@ -7,11 +7,11 @@ div(id="contact-form")
             option(value=index)=val
     
     div(class="field")
-        label(for="name") #{form.name} <span style="font-style: italic;">(Required)</span>
+        label(for="name") #{form.name} <span style="font-style: italic;">(#{require})</span>
         input(class="in-text" name="name", type="text", form="contactForm", required)
     
     div(class="field")
-        label(for="email") #{form.email} <span style="font-style: italic;">(Required)</span>
+        label(for="email") #{form.email} <span style="font-style: italic;">(#{require})</span>
         input(name="email", type="email", form="contactForm", required)
     
     div(class="field")
@@ -19,11 +19,11 @@ div(id="contact-form")
         input(class="in-text", name="subject", type="text", form="contactForm")
     
     div(class="field")
-        label(for="msg") #{form.message} <span style="font-style: italic;">(Required)</span>
+        label(for="msg") #{form.message} <span style="font-style: italic;">(#{require})</span>
         textarea(name="msg", rows="5", maxlength="500", form="contactForm", placeholder=hunnid5, required)
     
     div(id="nt-impt0")
-        label #{form.docs} <span style="font-style: italic;">(Optional)</span>
+        label #{form.docs} <span style="font-style: italic;">(#{optional})</span>
         img(id="add-drop" src="/public/add.png" alt="fdsfd")
     
     form(id="uploadForm", class="dropzone dz-clickable", enctype='multipart/form-data')

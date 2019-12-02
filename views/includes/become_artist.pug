@@ -6,11 +6,11 @@ div(id="contact-form")
     form(id="contactForm", method="post", action="/join/artist", autocomplete="off")
 
     div(class="field")
-        label(for="name") #{form.name} <span style="font-style: italic;">(Required)</span>
+        label(for="name") #{form.name} <span style="font-style: italic;">(#{require})</span>
         input(class="in-text" name="name", type="text", form="contactForm", required)
 
     div(class="field")
-        label(for="email") #{form.email} <span style="font-style: italic;">(Required)</span>
+        label(for="email") #{form.email} <span style="font-style: italic;">(#{require})</span>
         input(name="email", type="email", form="contactForm", required)
     
     div(class="field")
@@ -28,7 +28,7 @@ div(id="contact-form")
         input(id="linkit" name="lowers", type="text", form="contactForm")
     
     div(id="nt-impt0")
-        label Attach Files <span style="font-style: italic;">(Optional)</span>
+        label Attach Files <span style="font-style: italic;">(#{optional})</span>
         img(id="add-drop" src="/public/add.png" alt="fdsfd")
     
     form(id="uploadForm", class="dropzone dz-clickable", enctype='multipart/form-data')
