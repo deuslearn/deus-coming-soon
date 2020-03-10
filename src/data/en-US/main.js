@@ -1,5 +1,5 @@
 module.exports = {
-    "cs_title": "COMING SOON",
+    "cs_title": "COMING SUMMER 2020",
     "sub":"The platform is under construction",
     "counter":{
         "day": "Day",

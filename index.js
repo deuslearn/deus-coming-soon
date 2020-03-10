@@ -10,7 +10,7 @@ const MessageService = require('./src/MessageService');
 
 const SiteText = require("./src/SiteText");
 
-const PORT = process.env.PORT || 8084;
+const PORT = process.env.PORT || 443;
 const PAGE = "index";
 
 const service = new MessageService(logger);
