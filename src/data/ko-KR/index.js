@@ -1,6 +1,6 @@
 module.exports = {
     "title":{ 
-        "home": "곧 출시 예정",
+        "home": "오는 여름 2020",
         "about": "회사 소개",
         "contact": "문의하기",
         "artist": "데우스 아티스트되기"

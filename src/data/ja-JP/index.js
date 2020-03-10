@@ -1,6 +1,6 @@
 module.exports = {
     "title":{ 
-        "home":"近日公開",
+        "home":"2020年夏",
         "about":"私たちに関しては",
         "contact":"お問い合わせ",
         "artist":"DEUSアーティストになる"

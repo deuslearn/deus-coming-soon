@@ -4,3 +4,5 @@ Deus_Platform*
 noreply_creds.json
 tmp/
 *.log
+app.yml*
+deploy.sh

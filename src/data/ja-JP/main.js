@@ -1,5 +1,5 @@
 module.exports = {
-    "cs_title": "近日公開",
+    "cs_title": "2020年夏",
     "sub":"プラットフォームは工事中です",
     "counter":{
         "day": "日",

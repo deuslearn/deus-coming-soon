@@ -1,5 +1,5 @@
 name: Deploy to gcloud
-on:
+on: 
   push:
     branches:
       - master
