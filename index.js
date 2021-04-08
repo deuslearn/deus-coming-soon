@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -9,7 +10,7 @@ const FileHandler = require('./src/utils/uploadFiles');
 const MessageService = require('./src/MessageService');
 
 const SiteText = require("./src/SiteText");
-
+console.log(process.env.PORT)
 const PORT = process.env.PORT || 443;
 const PAGE = "index";
 

@@ -19,7 +19,6 @@ html
             include /js/dropzone/dropzone.js
             include /js/choices/choices.min.js
 
-        script(type="text/javascript" src="https://publ.maillist-manage.com/js/optin.min.js" onload="setupSF('sf3a9e5ddc812a00352207941e7468fd11e730b2e77c9fe8b7','ZCFORMVIEW',false,'light')")
         script(type="text/javascript").
             function runOnFormSubmit_sf3a9e5ddc812a00352207941e7468fd11e730b2e77c9fe8b7(th){
             };
@@ -37,9 +36,21 @@ html
         link(href="/public/icon.png", rel="icon")
         link(href="https://fonts.googleapis.com/css?family=Montserrat&display=swap", rel="stylesheet")
     body
+        nav(id="navbar-hit")
+            div(id="nav-inner")
+                div(id="head-logo")
+                    a( href='/') 
+                        img( src='/public/logo.png' alt="logo")
+                    div(id="f-left")
+                        a(href='/about')=footer.about
+                        a(href='/join/artist')=footer.artist
+                        a(href='/contact')=footer.contact
+                div(id="login-side")
+                    a(href='/login') Login
+                    a(href='/login')
+                        img( src='/public/exit_to_app.svg' alt="login")
+
         main
-            a(id="head-logo" href=`${'/'}`) 
-                img( src='/public/logo.png' alt="logo")
             div(id="right-wrap")
                 if page=="artist_join"
                     img(class="poster" src='/public/hotmix.png' alt="rope")
@@ -79,21 +90,8 @@ html
                     include includes/become_artist.pug
         
         footer
-            div(id="f-left")
-                a(href=`${'/about'}`)=footer.about
-                div(class="f-divider")
-                a(href=`${'/contact'}`)=footer.contact
-                div(class="f-divider")
-                a(href=`${'/join/artist'}`)=footer.artist
-
-            div(id="f-right")
+            div(class="f-right")
                 //- p(id="cpy-rite") Copyright ©  2018-2019 Deus Company S.L. All rights reserved.
-                a(class="sns" href=`${"/"}`) 
-                    img(src='/public/fb.png' alt="facebook")
-                a(class="sns" href=`${"https://twitter.com/DeusSNS"}`) 
-                    img(src='/public/tweet.png' alt="twitter" )
-                a(class="sns" href=`${"https://www.instagram.com/deussns/"}`) 
-                    img(src='/public/insta.png' alt="instagram")
                 select(id="locale")
                     each val, index in sup_languages
                         option(value=index selected=index==locale?"selected":undefined)=val

@@ -10,10 +10,10 @@ module.exports = class MessageService{
         this.transport = nodemailer.createTransport({
             host: 'smtp.zoho.com',
             port: 465,
-            auth: process.env.EMAIL_USER?{
+            auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
-            }:JSON.parse(fs.readFileSync(path.join(__dirname + "/utils/noreply_creds.json")))
+            }
         });
     }
 

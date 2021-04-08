@@ -21,7 +21,7 @@ let dz = {
     var _ref;
     return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
   }
-}
+} 
 
 if(document.getElementById('be-language')){
   new Choices('#be-language', {

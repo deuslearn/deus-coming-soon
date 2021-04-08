@@ -1,27 +1,29 @@
 
 footer {
+    position: relative;
     flex-shrink: 0;
     display: flex;
-    height: 7%;
+    height: 60px;
     min-height: 35px;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     background: #002533;
     align-self: end;
+    z-index: 1;
 }
 
-footer p, footer a{
+footer p, #f-left a{
     font-weight: 500;
-    font-size: .6vw;
+    font-size: .8vw;
     line-height: 15px;
     
     letter-spacing: 0.38px;
     text-transform: uppercase;
 
-    color: #9CB1BA;
+    color: #FFFFFF;
 
-    margin: 0 25px;
+    margin-left: 25px;
 }
 
 .f-divider{
@@ -70,7 +72,7 @@ footer select{
     padding-left: 10px;
 }
 
-#f-right, #f-left{
+.f-right, #f-left{
     display: flex;
     align-items: center;
 }

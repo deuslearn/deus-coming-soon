@@ -6,9 +6,9 @@ module.exports = {
         "artist":"Become A Deus Artist"
     },
     "footer":{
-        "about": "About DEUS",
-        "contact": "Contact Us",
-        "artist": "Become A Deus Artist"
+        "about": "About",
+        "contact": "Contact",
+        "artist": "Artists"
     },
     "sup_languages":{
         "en-US":"English",

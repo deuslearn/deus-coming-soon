@@ -1,12 +1,12 @@
 module.exports = {
-    "cs_title": "COMING SUMMER 2020",
-    "sub":"The platform is under construction",
+    "cs_title": "Now In Closed Beta",
+    "sub":"The time is almost upon us.",
     "counter":{
         "day": "Day",
         "hour": "Hour",
         "min": "Minute",
         "sec": "Second"
     },
-    "subscribe": "Subscribe to keep update on current progress DEUS",
+    "subscribe": "Buttoning up the app development follow DEUS on Twitter for details Updates and details on how you can gain access.",
     "wrd_email": "Email"
 }
