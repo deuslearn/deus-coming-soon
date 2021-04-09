@@ -25,8 +25,6 @@ pipeline {
                 sh "docker rmi $image:$version"
             }
         }
-    }
-    stages {
         stage('Deploy on Cloud Run'){
             steps {
                 sh '''
