@@ -1,6 +1,6 @@
 module.exports = {
     "title":{ 
-        "home":"Coming summer 2020",
+        "home":"Deus",
         "about":"About DEUS",
         "contact":"Contact Us",
         "artist":"Become A Deus Artist"

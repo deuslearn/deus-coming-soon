@@ -10,8 +10,8 @@ const FileHandler = require('./src/utils/uploadFiles');
 const MessageService = require('./src/MessageService');
 
 const SiteText = require("./src/SiteText");
-console.log(process.env.PORT)
-const PORT = process.env.PORT || 443;
+
+const PORT = process.env.PORT;
 const PAGE = "index";
 
 const service = new MessageService(logger);
@@ -89,6 +89,12 @@ app.post('/contact' , async (req, res, next) => {
         });
     }
 }, renderPage);
+
+app.use(function(req, res, next) {
+    res.status(404);
+    res.render('404', { url: req.url });
+    return;
+});
 
 app.get('/subscribed', (req, res) => {
     res.render(PAGE, {
