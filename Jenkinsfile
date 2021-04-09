@@ -34,7 +34,6 @@ pipeline {
                     --set-env-vars=NODE_ENV=$nodeenv \
                     --platform=managed \
                     --region=us-central1 \
-                    --no-allow-unauthenticated \
                     --vpc-connector=deus-serverless-vpc \
                     --vpc-egress=all
                 '''

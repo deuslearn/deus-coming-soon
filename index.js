@@ -90,12 +90,6 @@ app.post('/contact' , async (req, res, next) => {
     }
 }, renderPage);
 
-app.use(function(req, res, next) {
-    res.status(404);
-    res.render('404', { url: req.url });
-    return;
-});
-
 app.get('/subscribed', (req, res) => {
     res.render(PAGE, {
         page: "message_received",
@@ -106,12 +100,12 @@ app.get('/subscribed', (req, res) => {
     });
 });
 
-app.get('/join/artist', (req, res, next) => {
+app.get('/artist', (req, res, next) => {
     req.pagez="artist_join"
     next()
 }, renderPage);
 
-app.post('/join/artist', async (req, res, next) => {
+app.post('/artist', async (req, res, next) => {
     resp = await service.relayToDeusInfo(req.body, "join")
     if(resp==true){
         req.pagez="message_received";   
