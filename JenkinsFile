@@ -31,7 +31,7 @@ pipeline {
                 sh '''
                     gcloud run deploy deus-homepage \
                     --image=$image:$version \
-                    --port=8088 \
+                    --port=8080 \
                     --set-env-vars=NODE_ENV=$nodeenv \
                     --platform=managed \
                     --region=us-central1 \
